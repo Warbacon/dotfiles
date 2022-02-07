@@ -1,5 +1,7 @@
 if status is-interactive
-    export MANPAGER="nvim  +Man!"
+    set fish_greeting
+
+    # export MANPAGER="nvim  +Man!"
 
     abbr --add --global q exit
     abbr --add --global clr clear
