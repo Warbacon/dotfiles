@@ -5,7 +5,7 @@ require('nvim-autopairs').setup {
 }
 
 -- LUALINE
-require'lualine'.setup()
+require('lualine').setup()
 
 -- TREESITTER
 require'nvim-treesitter.configs'.setup {

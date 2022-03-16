@@ -10,4 +10,4 @@ vim.cmd('set signcolumn=yes') -- Always shows the sign column
 vim.cmd('set updatetime=300') -- Update gitsigns faster
 vim.cmd('set noswapfile') -- No swapfile
 
-vim.cmd('colorscheme dracula') -- Sets the color theme
+require('onedark').load() -- Loads One Dark theme

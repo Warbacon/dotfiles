@@ -3,6 +3,7 @@ return require('packer').startup(
     use 'wbthomason/packer.nvim' -- Packer management
 
     use {'dracula/vim', as = 'dracula'} -- Dracula theme
+    use 'navarasu/onedark.nvim' -- One Dark theme
 
     use 'fladson/vim-kitty' -- Kitty config syntax highlighting
 
