@@ -1,9 +1,9 @@
 # One Dark Color Palette
 set -l foreground abb2bf
-set -l selection 343a46
-set -l comment 7f848e
+set -l selection 31353f
+set -l comment 5c6370
 set -l red e06c75
-set -l orange d19a66
+set -l orange ffb86c
 set -l yellow e5c07b
 set -l green 98c379
 set -l purple c678dd
