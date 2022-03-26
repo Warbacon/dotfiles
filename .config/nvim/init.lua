@@ -9,5 +9,9 @@ vim.cmd('set termguicolors') -- Enables truecolor
 vim.cmd('set signcolumn=yes') -- Always shows the sign column
 vim.cmd('set updatetime=300') -- Update gitsigns faster
 vim.cmd('set noswapfile') -- No swapfile
+vim.cmd("set mouse=a")
+vim.cmd("set clipboard+=unnamedplus")
+vim.cmd("set number relativenumber")
+vim.cmd("set tabstop=4 shiftwidth=4 expandtab")
 
 require('onedark').load() -- Loads One Dark theme

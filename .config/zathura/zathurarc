@@ -1,12 +1,10 @@
-set font "JetBrains Mono 10"
+set window-title-basename "true"
+set continuous-hist-save true
+set selection-clipboard clipboard
 
 set window-height 3000
 set window-width 3000
 
-set selection-clipboard clipboard
+set font "JetBrains Mono 10"
 
-set default-bg "#282a36"
-set inputbar-bg "#21222c"
-set statusbar-bg "#21222c"
-set recolor-lightcolor "#282a36"
-set continuous-hist-save true
+set recolor-keephue             "true"
