@@ -333,7 +333,14 @@ globalkeys = gears.table.join(
               {description = "raises the volume", group = "sound"}),
 
     awful.key({ }, "XF86AudioLowerVolume", function() awful.spawn.with_shell("pactl -- set-sink-volume 0 -5%") end,
-              {description = "lowers the volume", group = "sound"})        
+              {description = "lowers the volume", group = "sound"}),
+
+    -- Backlight control
+    awful.key({ }, "XF86MonBrightnessDown", function() awful.spawn.with_shell("xbacklight -5") end,
+              {description = "decreases the backlight", group = "backlight"}),
+
+    awful.key({ }, "XF86MonBrightnessUp", function() awful.spawn.with_shell("xbacklight +5") end,
+              {description = "increases the backlight", group = "backlight"})
 )
 
 clientkeys = gears.table.join(
@@ -573,4 +580,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart
 awful.spawn.with_shell("picom -b")
 awful.spawn.with_shell("nm-applet")
+awful.spawn.with_shell("xgamma -rgamma 0.9 -ggamma 0.9")
 
