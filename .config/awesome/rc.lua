@@ -311,7 +311,7 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey }, "r", function () awful.spawn("rofi -show drun") end,
+    awful.key({ modkey }, "r", function () awful.util.spawn("rofi -show drun -show-icons") end,
               {description = "rofi", group = "launcher"}),
 
     awful.key({ modkey }, "x",
@@ -334,12 +334,14 @@ globalkeys = gears.table.join(
 
     awful.key({ }, "XF86AudioLowerVolume", function() awful.spawn.with_shell("pactl -- set-sink-volume 0 -5%") end,
               {description = "lowers the volume", group = "sound"}),
+     awful.key({ }, "XF86AudioMute", function() awful.spawn.with_shell("pactl set-sink-mute @DEFAULT_SINK@ toggle") end,
+              {description = "lowers the volume", group = "sound"}),
 
     -- Backlight control
-    awful.key({ }, "XF86MonBrightnessDown", function() awful.spawn.with_shell("xbacklight -5") end,
+    awful.key({ }, "XF86MonBrightnessDown", function() awful.spawn.with_shell("xbacklight -10") end,
               {description = "decreases the backlight", group = "backlight"}),
 
-    awful.key({ }, "XF86MonBrightnessUp", function() awful.spawn.with_shell("xbacklight +5") end,
+    awful.key({ }, "XF86MonBrightnessUp", function() awful.spawn.with_shell("xbacklight +10") end,
               {description = "increases the backlight", group = "backlight"})
 )
 
@@ -580,5 +582,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart
 awful.spawn.with_shell("picom -b")
 awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("xgamma -rgamma 0.9 -ggamma 0.9")
+-- awful.spawn.with_shell("xgamma -rgamma 0.85 -ggamma 0.85")
 
