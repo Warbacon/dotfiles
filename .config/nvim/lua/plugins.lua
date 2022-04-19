@@ -40,6 +40,8 @@ return require('packer').startup(
       run = ':TSUpdate' -- Update parsers on start
     }
 
+    use 'norcalli/nvim-colorizer.lua'
+
     -- GITSIGNS
     use {
       'lewis6991/gitsigns.nvim',
