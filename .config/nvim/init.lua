@@ -14,4 +14,4 @@ vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("set number relativenumber")
 vim.cmd("set tabstop=4 shiftwidth=4 expandtab")
 
-require('onedark').load() -- Loads One Dark theme
+require('onedark').load()
