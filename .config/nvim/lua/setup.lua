@@ -6,8 +6,8 @@ require('nvim-autopairs').setup {
 
 -- COLOR
 require 'colorizer'.setup(
-  {'*';},
-  {
+    {'*';},
+    {
     RGB      = true;         -- #RGB hex codes
 	RRGGBB   = true;         -- #RRGGBB hex codes
 	names    = false;         -- "Name" codes like Blue
@@ -18,7 +18,7 @@ require 'colorizer'.setup(
 	css_fn   = false;        -- Enable all CSS *functions*: rgb_fn, hsl_fn
 	-- Available modes: foreground, background
 	mode     = 'background'; -- Set the display mode.
-  })
+})
 
 -- LUALINE
 require('lualine').setup()
@@ -104,3 +104,6 @@ cmp.setup {
   },
 }
 
+require'nvim-tree'.setup()
+
+vim.cmd("nnoremap <C-n> :NvimTreeToggle<CR>")

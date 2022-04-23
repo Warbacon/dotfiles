@@ -56,6 +56,13 @@ return require('packer').startup(
       requires = { 'kyazdani42/nvim-web-devicons', opt = true } -- Nvim-web-icons
     }
 
+    use {
+    'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icon
+      }
+    }
+
     -- LSPCONFIG
     use {
       'neovim/nvim-lspconfig',
