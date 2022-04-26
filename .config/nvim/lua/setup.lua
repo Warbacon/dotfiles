@@ -1,29 +1,25 @@
--- AUTOPAIRS
+-- IMPATIENT.NVIM -----------------------------------
+require('impatient')
+
+-- ONE DARK THEME --------------------------------
+require('onedark').setup()
+
+-- AUTOPAIRS --------------------------------------
 require('nvim-autopairs').setup {
   enable_check_bracket_line = false,
   ignored_next_char = "[%w%.]"
 }
 
--- COLOR
+-- COLORIZER --------------------------------------
 require 'colorizer'.setup(
-    {'*';},
-    {
-    RGB      = true;         -- #RGB hex codes
-	RRGGBB   = true;         -- #RRGGBB hex codes
-	names    = false;         -- "Name" codes like Blue
-	RRGGBBAA = false;        -- #RRGGBBAA hex codes
-	rgb_fn   = false;        -- CSS rgb() and rgba() functions
-	hsl_fn   = false;        -- CSS hsl() and hsla() functions
-	css      = false;        -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-	css_fn   = false;        -- Enable all CSS *functions*: rgb_fn, hsl_fn
-	-- Available modes: foreground, background
-	mode     = 'background'; -- Set the display mode.
-})
+  { '*'; },
+  { names = false; }) -- Disable for codes like Blue
 
--- LUALINE
+-- LUALINE ----------------------------------------
 require('lualine').setup()
 
--- TREESITTER
+
+-- TREESITTER -------------------------------------
 require 'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
@@ -31,12 +27,13 @@ require 'nvim-treesitter.configs'.setup {
   },
 }
 
--- LSP INSTALLER
+-- LSP INSTALLER ----------------------------------
 local lsp_installer = require("nvim-lsp-installer")
 
 lsp_installer.on_server_ready(function(server)
   local opts = {}
 
+  -- Lua server config ----------------
   if server.name == "sumneko_lua" then
     local sumneko_opts = {
       settings = {
@@ -59,7 +56,7 @@ lsp_installer.on_server_ready(function(server)
   server:setup(opts)
 end)
 
--- AUTOCOMPLETE
+-- AUTOCOMPLETE -----------------------------------
 require("luasnip.loaders.from_vscode").lazy_load()
 
 local luasnip = require('luasnip')
@@ -76,7 +73,7 @@ cmp.setup {
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<Tab>'] = cmp.mapping.select_next_item(),
     ['<S-Tab>'] = cmp.mapping.select_prev_item()
   }),
@@ -96,14 +93,10 @@ cmp.setup {
     native_menu = false,
   },
 }
--- AUTOCOMPLETE ICONS
+-- Icons -------------------------
 local lspkind = require('lspkind')
 cmp.setup {
   formatting = {
     format = lspkind.cmp_format(),
   },
 }
-
-require'nvim-tree'.setup()
-
-vim.cmd("nnoremap <C-n> :NvimTreeToggle<CR>")
