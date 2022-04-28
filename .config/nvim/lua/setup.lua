@@ -17,7 +17,7 @@ require 'colorizer'.setup(
 
 -- LUALINE ----------------------------------------
 require('lualine').setup()
-
+vim.opt.laststatus = 3
 
 -- TREESITTER -------------------------------------
 require 'nvim-treesitter.configs'.setup {
