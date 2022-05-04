@@ -16,8 +16,11 @@ require 'colorizer'.setup(
   { names = false; }) -- Disable for codes like Blue
 
 -- LUALINE ----------------------------------------
-require('lualine').setup()
-vim.opt.laststatus = 3
+require('lualine').setup{
+options = {
+    globalstatus = true,
+  }
+}
 
 -- TREESITTER -------------------------------------
 require 'nvim-treesitter.configs'.setup {
