@@ -34,7 +34,7 @@ from libqtile import hook
 # from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "alacritty"
+terminal = "kitty -1"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -129,7 +129,7 @@ widget_defaults = dict(
     font="JetBrainsMono Nerd Font",
     fontsize=14,
     padding=3,
-    foreground="#abb2bf",
+    foreground="#abb2bf"
 )
 extension_defaults = widget_defaults.copy()
 
@@ -158,8 +158,8 @@ screens = [
             ],
             35,
             background="#0e0f12",
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            # border_width=[6, 0, 6, 0],  # Draw top and bottom borders
+            # border_color=["#0e0f12", "000000", "#0e0f12", "000000"]  # Borders are magenta
         ),
     ),
 ]
